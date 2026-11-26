@@ -1,19 +1,19 @@
 {
   "version": 1,
-  "updatedAt": 1795711757515,
+  "updatedAt": 1795712671964,
   "source": "CG",
   "prices": {
     "BTC": {
-      "price": 60442,
-      "change24h": 3.7629040383048165
+      "price": 60553,
+      "change24h": 3.3757976542254333
     },
     "ETH": {
-      "price": 1688.88,
-      "change24h": 3.3239146915202267
+      "price": 1692.32,
+      "change24h": 2.8118055957058683
     },
     "SOL": {
-      "price": 70.9,
-      "change24h": 5.116187435469826
+      "price": 71,
+      "change24h": 4.658954305627802
     }
   },
   "alerts": [
