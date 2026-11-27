@@ -37,7 +37,7 @@ app shows fired alerts when you open it. The demo video shows the real flow.
   (without a token it still polls + publishes, Telegram disabled).
 - `state/alerts.json` (on the `gh-pages` branch) — the bot's published
   state, read by the glasses app when online:
-  `https://gmxbtt.github.io/glancefolio/state/alerts.json`
+  `https://itaro91100.github.io/glancefolio/state/alerts.json`
 
 ## Data
 
