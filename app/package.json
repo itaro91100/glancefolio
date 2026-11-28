@@ -1,0 +1,25 @@
+{
+  "name": "glancefolio",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "test": "npm run test:store && npm run test:companion",
+    "test:store": "./node_modules/.bin/esbuild tests/store.test.mjs --bundle --format=esm --platform=node --outfile=/tmp/store.test.bundle.mjs --log-level=error && node /tmp/store.test.bundle.mjs",
+    "test:companion": "./node_modules/.bin/esbuild tests/companion.test.mjs --bundle --format=esm --platform=node --outfile=/tmp/companion.test.bundle.mjs --log-level=error && node /tmp/companion.test.bundle.mjs",
+    "preview": "vite preview",
+    "pack": "npm run build && evenhub pack app.json dist",
+    "simulate": "evenhub-simulator http://localhost:5173"
+  },
+  "dependencies": {
+    "@evenrealities/even_hub_sdk": "0.0.16"
+  },
+  "devDependencies": {
+    "@evenrealities/evenhub-cli": "^0.1.12",
+    "@evenrealities/evenhub-simulator": "^0.7.2",
+    "typescript": "^5.7.0",
+    "vite": "^5.4.0"
+  }
+}

@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <title>Glancefolio</title>
+    <style>
+      html, body {
+        margin: 0;
+        min-height: 100%;
+        /* ER brand dark-theme surface (#232323) + Neutral-200 text (#E5E5E5). */
+        background: #232323;
+        color: #E5E5E5;
+        font: 14px/1.4 -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+        /* Kill WebView zoom + iOS auto-sizing + rubber-band scroll. */
+        touch-action: manipulation;
+        -webkit-text-size-adjust: 100%;
+        overscroll-behavior: none;
+      }
+      #app {
+        max-width: 480px;
+        margin: 0 auto;
+        padding: 24px 20px 40px;
+        box-sizing: border-box;
+      }
+      h1 { font-size: 20px; margin: 0 0 4px; }
+      h2 { font-size: 15px; margin: 24px 0 8px; border-bottom: 1px solid #444; padding-bottom: 4px; }
+      .muted { color: #9a9a9a; }
+      .error { color: #ff7b7b; min-height: 1.4em; margin: 6px 0 0; }
+      form label { display: block; margin: 8px 0; }
+      form input, form select {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: 4px;
+        padding: 10px;
+        border: 1px solid #555;
+        border-radius: 6px;
+        background: #2e2e2e;
+        color: #E5E5E5;
+        font: inherit;
+      }
+      button {
+        margin-top: 10px;
+        padding: 10px 16px;
+        border: 0;
+        border-radius: 6px;
+        background: #3f7d4e;
+        color: #fff;
+        font: inherit;
+        cursor: pointer;
+      }
+      button:hover { background: #4c9460; }
+      ul { list-style: none; padding: 0; margin: 8px 0 0; }
+      li {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 0;
+        border-bottom: 1px solid #333;
+      }
+      li span { flex: 1; }
+      li button { margin-top: 0; padding: 6px 10px; background: #444; }
+      li button:hover { background: #555; }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <h1>Glancefolio</h1>
+      <p class="muted">Running on your glasses — check the G2 display. Prices come from
+      CoinGecko, Binance Vision and Kraken. Holdings and alerts are stored on
+      this phone only; the glasses update the moment you save.</p>
+
+      <section>
+        <h2>Holdings</h2>
+        <form id="hold-form">
+          <label>Coin
+            <select id="hold-symbol">
+              <option>BTC</option>
+              <option>ETH</option>
+              <option>SOL</option>
+            </select>
+          </label>
+          <label>Amount
+            <input id="hold-amount" type="number" step="any" min="0" inputmode="decimal" placeholder="0.42" />
+          </label>
+          <label>Cost basis, $ per unit (optional)
+            <input id="hold-cost" type="number" step="any" min="0" inputmode="decimal" placeholder="60000" />
+          </label>
+          <button id="hold-add" type="submit">Add / update</button>
+        </form>
+        <p id="hold-error" class="error"></p>
+        <ul id="hold-list"></ul>
+      </section>
+
+      <section>
+        <h2>Alerts</h2>
+        <ul id="alert-list"></ul>
+        <p class="muted">Set alerts from the glasses (tap a coin) — they show up here.
+        The Telegram bot (Day 3) will deliver them as messages.</p>
+      </section>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

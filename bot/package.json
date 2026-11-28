@@ -1,0 +1,1 @@
+{"description":"Glancefolio alert worker + Telegram long-poller (Heads Up / Even Realities)","name":"glancefolio-bot","private":true,"scripts":{"start":"node src/index.mjs","test":"node --test test/*.test.mjs"},"type":"module","version":"0.1.0"}
